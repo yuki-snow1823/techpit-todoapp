@@ -19,7 +19,7 @@ export default {
         {
           text: "タイトル",
           align: "left",
-          value: "tite"
+          value: "title"
         },
         { 
           text: "ユーザー名", 
