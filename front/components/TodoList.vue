@@ -3,7 +3,7 @@
     <v-card-title>
       Todo List
       <v-spacer></v-spacer>
-      <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
+      <v-text-field v-model="search" label="Search" single-line hide-details></v-text-field>
     </v-card-title>
     <v-data-table :headers="headers" :items="todos" :search="search"></v-data-table>
   </v-card>
@@ -11,30 +11,20 @@
 
 <script>
 export default {
+  props: ["todos"],
   data() {
     return {
-      todos: [
-        {
-          title: "test2",
-          username: "太郎"
-        },
-        {
-          title: "test1",
-          username: "太郎"
-        },
-        {
-          title: "test3",
-          username: "太郎"
-        }
-      ],
       search: "",
       headers: [
         {
           text: "タイトル",
           align: "left",
-          value: "title"
+          value: "tite"
         },
-        { text: "ユーザー名", value: "username" }
+        { 
+          text: "ユーザー名", 
+          value: "username" 
+        }
       ]
     };
   }
