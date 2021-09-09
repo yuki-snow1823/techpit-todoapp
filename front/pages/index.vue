@@ -20,7 +20,8 @@
       };
     },
     methods: {
-      addTodo(title) {
+      async addTodo(title) { // asyncを追加
+        await axios.post("/v1/todos", { todo }); // この行を追加
         this.todos.push({
           title
         });
