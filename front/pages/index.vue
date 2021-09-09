@@ -8,6 +8,8 @@
 <script>
   import AddTodo from "@/components/AddTodo";
   import TodoList from "@/components/TodoList";
+  import axios from "@/plugins/axios";
+
 
   export default {
     components: {
