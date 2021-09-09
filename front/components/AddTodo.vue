@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      this.$emit("submit", this.title);  //この行を追加
+      this.$emit("submit", this.title);
       this.title = "";
     }
   }
