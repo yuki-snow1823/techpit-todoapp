@@ -23,7 +23,7 @@
     },
     methods: {
       async addTodo(title) { // asyncを追加
-        await axios.post("/v1/todos", { todo }); // この行を追加
+        await axios.post("/v1/todos", { title })
         this.todos.push({
           title
         });
