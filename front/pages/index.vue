@@ -21,8 +21,13 @@
         todos: [],
       };
     },
+    // ここから追加
+    created() {
+      console.log("API_KEY:", process.env.API_KEY);
+    },
+    // ここまで追加
     methods: {
-      async addTodo(title) { // asyncを追加
+      async addTodo(title) {
         await axios.post("/v1/todos", { title })
         this.todos.push({
           title
