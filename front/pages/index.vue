@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div v-if="user"> <!-- 追加 -->
+    <p>名前：{{user.name}}</p>
     <AddTodo @submit="addTodo" />
     <TodoList :todos="todos" />
-  </div>
+  </div> <!-- 追加 -->
 </template>
 
 <script>
@@ -21,14 +22,19 @@
         todos: [],
       };
     },
-    // ここから追加
+    computed: {
+      user() {
+        return this.$store.state.auth.currentUser;
+      }
+    },
     created() {
       console.log("API_KEY:", process.env.API_KEY);
     },
-    // ここまで追加
     methods: {
       async addTodo(title) {
-        await axios.post("/v1/todos", { title })
+        await axios.post("/v1/todos", {
+          title
+        })
         this.todos.push({
           title
         });
