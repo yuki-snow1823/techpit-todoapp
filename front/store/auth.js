@@ -9,7 +9,7 @@ export const mutations = {
 };
 
 export const actions = {
-  setUser (context, data) {
+  setUser(context, data) {
     context.commit('setUser', data)
   }
 };
