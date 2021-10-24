@@ -1,7 +1,8 @@
 <template>
   <v-app dark>
     <div>
-      <Loading></Loading>
+      <Success />
+      <Loading />
     </div>
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
       <v-list>
@@ -57,6 +58,7 @@
 
 <script>
 import Loading from "@/components/Loading";　//追加
+import Success from "@/components/Success" //追加
   export default {
     data() {
       return {
@@ -70,7 +72,8 @@ import Loading from "@/components/Loading";　//追加
       }
     },
     components: {
-      Loading
+      Loading,
+      Success  //追加
     },
     computed: {
       user() {
