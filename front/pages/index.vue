@@ -32,14 +32,31 @@
     },
     methods: {
       async addTodo(todo) {
-        await axios.post("/v1/todos", {
+        const {
+          data
+        } = await axios.post("/v1/todos", {
           todo
-        })
+        });
         this.$store.dispatch("auth/setUser", {
           ...this.user,
-          todos: [...this.user.todos, todo]
+          todos: [...this.user.todos, data]
         });
       },
+    },
+    created(){
+    },
+    fetch({
+      store,
+      redirect
+    }) {
+      store.watch(
+        state => state.auth.currentUser,
+        (newUser, oldUser) => {
+          if (!newUser) {
+            return redirect("/login");
+          }
+        }
+      );
     },
   };
 
