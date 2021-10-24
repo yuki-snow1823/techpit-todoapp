@@ -73,14 +73,9 @@
           });
         });
 
-        function delay(time) {
-          return new Promise(function (resolve) {
-            setTimeout(resolve, time);
-          });
-        }
-
-        await delay(3000);
-        this.$store.dispatch("loading/setLoading", false);
+        setTimeout(() => {
+          this.$store.dispatch("loading/setLoading", false);
+        }, 3000);
         this.$store.dispatch("auth/setUser", data);
         this.$router.push("/");
       }

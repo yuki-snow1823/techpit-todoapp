@@ -10,7 +10,6 @@ export const mutations = {
 
 export const actions = {
   setLoading(context, data) {
-    console.log("呼び出されている？")
     context.commit('setLoading', data)
   }
 };
