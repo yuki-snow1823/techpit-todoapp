@@ -13,7 +13,6 @@ import "loaders.css";
 export default {
   computed: {
     loading() {
-      console.log("hoge", this.$store.state.loading.isLoading);
       return this.$store.state.loading.isLoading;
     }
   }

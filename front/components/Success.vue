@@ -9,7 +9,7 @@
   export default {
     computed: {
       notice() {
-        return this.$store.state.notification;
+        return this.$store.state.notification.success;
       }
     }
   };
@@ -35,9 +35,7 @@
 
   .fade-enter,
   .fade-leave-to
-
-  /* .fade-leave-active below version 2.1.8 */
-    {
+  {
     opacity: 0;
   }
 
