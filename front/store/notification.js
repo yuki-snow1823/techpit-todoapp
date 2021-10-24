@@ -1,15 +1,18 @@
 export const state = () => ({
-  message: "",
+  success: {
+    message: "",
+    status: false
+  }
 });
 
 export const mutations = {
-  setLoading(state, payload) {
-    state.message = payload
+  setNotice(state, payload) {
+    state.success = payload
   }
 };
 
 export const actions = {
-  setLoading(context, data) {
-    context.commit('setLoading', data)
+  setNotice(context, data) {
+    context.commit('setNotice', data)
   }
 };
